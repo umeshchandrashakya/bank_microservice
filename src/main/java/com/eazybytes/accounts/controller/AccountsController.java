@@ -22,8 +22,9 @@ public class AccountsController {
     IAccountService accountServiceImpl;
 
 
-    //create account changes in feature
-    //hi
+    int c= 20;
+
+
     @PostMapping("/createAccount")
     public ResponseEntity<ResponseDto> createAccount(@RequestBody CustomerDto customerDto) {
         logger.info("Inside createAccount mobile number {} customer name {}", customerDto.getMobileNumber(),customerDto.getName());
