@@ -1,0 +1,36 @@
+
+<configuration>
+
+    <appender name="myConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:/microservices/section2/accounts/accounts/logs/account.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>C:/microservices/section2/accounts/accounts/logs/account.%d{yyyy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+            <maxFileSize>10KB</maxFileSize>
+            <maxHistory>10</maxHistory>// delete the oldest log file more than 10.
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}[%thread] %-10level %logger{36} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+
+    &lt;!&ndash;<appender name="myFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>account.log</file>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}[%thread] %-10level %logger{36} - %msg %n</pattern>
+        </encoder>
+    </appender>&ndash;&gt;
+
+    <root level="info">
+       &lt;!&ndash; <appender-ref ref="myConsoleAppender"/>&ndash;&gt;
+        <appender-ref ref="myFileAppender"/>
+    </root>
+
+</configuration>
