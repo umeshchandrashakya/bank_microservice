@@ -1,0 +1,23 @@
+package com.eazybytes.accounts.service.impl;
+
+import com.eazybytes.accounts.dto.CustomerDto;
+import com.eazybytes.accounts.repository.AccountRepository;
+import com.eazybytes.accounts.service.IAccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AccountService implements IAccountService {
+
+    @Autowired
+    private AccountRepository accountRepository;
+
+    @Autowired
+    private CustomerService customerService;
+
+    @Override
+    public void createAccount(CustomerDto customerDto) {
+   
+
+    }
+}
